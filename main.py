@@ -10,7 +10,7 @@ import pickle
 # with open('./DB/block_list.pickle', 'rb') as f:
 #     black_list = pickle.load(f)
 
-text_example = ['Футбол это круто', 'Привет, я банан']
+text_example = ['В Санкт-Петербурге смягчат меры по COVID-19 с 21 февраля', 'Сборная России по хоккею сыграет с Данией в четвертьфинале Олимпиады в Пекине', 'Российский биатлонист Эдуард Латыпов назвал причину неудачной стрельбы в эстафете на Олимпиаде в Пекине.']
 fragments = {}
 TOKEN = '5198566227:AAGeVXLtPHBNEgl5A1JAQwyL3a85gKKCCtw'
 
