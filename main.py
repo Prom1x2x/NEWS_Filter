@@ -37,6 +37,7 @@ def delfromblock(message):
     bot.send_message(message.from_user.id, 'Слово удалено из черный список')
 
 def view_news(message):
+    buffer = []
     bot.send_message(message.from_user.id, 'Вот что я подобрал для Вас')
     with open('./DB/block_list.pickle', 'rb') as f:
         black_list = pickle.load(f)
@@ -55,8 +56,13 @@ def view_news(message):
                 if word == ban_word:
                     print(ban_word)
                     key=list(fragments.keys())[list(fragments.values()).index(text)]
-                    print(key)
-                    bot.send_message(message.from_user.id,key)
+                    buffer.append(key)
+    print(buffer)
+    for item in buffer:
+        fragments.pop(item)
+    for keys in fragments.keys():
+        bot.send_message(message.from_user.id, keys)
+                    
 
 @bot.message_handler(commands=['start'])
 def start(message):
