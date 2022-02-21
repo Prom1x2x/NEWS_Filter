@@ -53,7 +53,7 @@ def view_news(message):
             print(text)
             for word in text:
                 # print(word)
-                if word == ban_word:
+                if word == ban_word.lower().replace(" ",""):
                     print(ban_word)
                     key=list(fragments.keys())[list(fragments.values()).index(text)]
                     buffer.append(key)
@@ -66,7 +66,7 @@ def view_news(message):
 
 @bot.message_handler(commands=['start'])
 def start(message):
-    bot.send_message(message.from_user.id, 'Hello')
+    bot.send_message(message.from_user.id, 'Привет, я новостной бот, который будет отправлять самые интересные для тебя новости')
     bot.send_message(message.from_user.id, f'''Вот что я умею?
 /help - посмотреть список команд
 /block - посмотреть черный список
