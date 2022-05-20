@@ -4,11 +4,11 @@ import os
 import shutil
 import pickle
 
-# black_list = []
-# with open('./DB/block_list.pickle', 'wb') as f:
-#     pickle.dump(black_list,f)
-# with open('./DB/block_list.pickle', 'rb') as f:
-#     black_list = pickle.load(f)
+black_list = []
+with open('./DB/block_list.pickle', 'wb') as f:
+    pickle.dump(black_list,f)
+with open('./DB/block_list.pickle', 'rb') as f:
+    black_list = pickle.load(f)
 
 text_example = ['В Санкт-Петербурге смягчат меры по COVID-19 с 21 февраля', 'Сборная России по хоккею сыграет с Данией в четвертьфинале Олимпиады в Пекине', 'Российский биатлонист Эдуард Латыпов назвал причину неудачной стрельбы в эстафете на Олимпиаде в Пекине.']
 fragments = {}
